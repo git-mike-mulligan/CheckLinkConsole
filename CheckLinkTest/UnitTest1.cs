@@ -9,14 +9,23 @@ namespace CheckLinkTest
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void WithoutHttpAtStartOfLink_NoLinks()
         {
 
             var links = LinkChecker.GetLinks("<a href=\"google.com\" />");
-            String x = "x";
-
-            //Assert.Single(links);
+            
+            Assert.Empty(links);
             //Assert.Equal("google.com", links.First());
+        }
+
+        [Fact]
+        public void WithHttpAtStartOfLink_LinkParses()
+        {
+
+            var links = LinkChecker.GetLinks("<a href=\"http://google.com\" />");
+
+            Assert.Single(links);
+            Assert.Equal("http://google.com", links.First());
         }
     }
 }
