@@ -1,0 +1,46 @@
+2018-03-08T14:31:56.9935136-05:00  [INF] Saving report to C:\Users\micha\Documents\Projects\dotnet\xplat\CheckLinkConsole\reports\reports.txt (8c61c3c2)
+2018-03-08T18:01:32.3460172-05:00  [INF] Saving report to C:\Users\micha\Documents\Projects\dotnet\xplat\CheckLinkConsole\reports\reports.txt (8c61c3c2)
+2018-03-08T18:02:40.0197035-05:00  [INF] Saving report to C:\Users\micha\Documents\Projects\dotnet\xplat\CheckLinkConsole\reports\reports.txt (8c61c3c2)
+2018-03-08T18:11:47.2506893-05:00  [INF] Saving report to C:\Users\micha\Documents\Projects\dotnet\xplat\CheckLinkConsole\reports\reports.txt (8c61c3c2)
+2018-03-08T18:14:00.6204509-05:00  [INF] Saving report to C:\Users\micha\Documents\Projects\dotnet\xplat\CheckLinkConsole\reports\reports.txt (8c61c3c2)
+2018-03-08T18:14:00.9526113-05:00  [DBG] <a href="http://weshigbee.com" >Wes Higbee</a>
+ (e54d8b4c)
+2018-03-08T18:14:01.0283816-05:00  [VRB] http://weshigbee.com (7bbf542f)
+2018-03-08T18:19:12.2425386-05:00  [INF] Saving report to C:\Users\micha\Documents\Projects\dotnet\xplat\CheckLinkConsole\reports\reports.txt (8c61c3c2)
+2018-03-08T18:19:12.5331769-05:00  [DBG] This is a test page for link checking for my courses<br>
+
+<a href="http://missingsite387587b3e49b3a90.com">http://missingsite387587b3e49b3a90.com - Missing Site</a><br>
+<a href="https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid">https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid - 404 Not Found</a><br>
+<a href="http://weshigbee.com">http://weshigbee.com - Valid Page</a><br>
+ (04cb4057)
+2018-03-08T18:19:12.6100644-05:00  [VRB] http://missingsite387587b3e49b3a90.com,https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid,http://weshigbee.com (c2531cbe)
+2018-03-08T19:50:51.6571312-05:00  [INF] Saving report to C:\Users\micha\Documents\Projects\dotnet\xplat\CheckLinkConsole\reports\reports.txt (8c61c3c2)
+2018-03-08T19:50:52.0001029-05:00  [DBG] This is a test page for link checking for my courses<br>
+
+<a href="http://missingsite387587b3e49b3a90.com">http://missingsite387587b3e49b3a90.com - Missing Site</a><br>
+<a href="https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid">https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid - 404 Not Found</a><br>
+<a href="http://weshigbee.com">http://weshigbee.com - Valid Page</a><br>
+ (04cb4057)
+2018-03-08T19:50:52.0616610-05:00  [VRB] http://missingsite387587b3e49b3a90.com (b1dc4ae4)
+2018-03-08T19:50:52.0616860-05:00  [VRB] https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid (cf04300c)
+2018-03-08T19:50:52.0616999-05:00  [VRB] http://weshigbee.com (7bbf542f)
+2018-03-08T19:58:45.5483992-05:00  [INF] Saving report to C:\Users\micha\Documents\Projects\dotnet\xplat\CheckLinkConsole\reports\reports.txt (8c61c3c2)
+2018-03-08T19:58:45.7657771-05:00  [DBG] This is a test page for link checking for my courses<br>
+
+<a href="http://missingsite387587b3e49b3a90.com">http://missingsite387587b3e49b3a90.com - Missing Site</a><br>
+<a href="https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid">https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid - 404 Not Found</a><br>
+<a href="http://weshigbee.com">http://weshigbee.com - Valid Page</a><br>
+ (04cb4057)
+2018-03-08T19:58:45.8382017-05:00  [VRB] http://missingsite387587b3e49b3a90.com (b1dc4ae4)
+2018-03-08T19:58:45.8422374-05:00  [VRB] https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid (cf04300c)
+2018-03-08T19:58:45.8423669-05:00  [VRB] http://weshigbee.com (7bbf542f)
+2018-03-08T20:02:01.9674578-05:00  [INF] Saving report to C:\Users\micha\Documents\Projects\dotnet\xplat\CheckLinkConsole\reports\reports.txt (8c61c3c2)
+2018-03-08T20:02:02.2309453-05:00  [DBG] This is a test page for link checking for my courses<br>
+
+<a href="http://missingsite387587b3e49b3a90.com">http://missingsite387587b3e49b3a90.com - Missing Site</a><br>
+<a href="https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid">https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid - 404 Not Found</a><br>
+<a href="http://weshigbee.com">http://weshigbee.com - Valid Page</a><br>
+ (04cb4057)
+2018-03-08T20:02:02.2977793-05:00  [VRB] http://missingsite387587b3e49b3a90.com (b1dc4ae4)
+2018-03-08T20:02:02.3003569-05:00  [VRB] https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps/invalid (cf04300c)
+2018-03-08T20:02:02.3004010-05:00  [VRB] http://weshigbee.com (7bbf542f)

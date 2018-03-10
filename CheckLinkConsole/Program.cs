@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Hangfire;
+using Hangfire.MemoryStorage;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -7,41 +12,24 @@ namespace CheckLinkConsole
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            var currentDirectory = Directory.GetCurrentDirectory();
-            var outputFolder = "reports";
-            var outputFile = "report.txt";
-            var outputPath = Path.Combine(currentDirectory, outputFolder, outputFile);
-            var directory = Path.GetDirectoryName(outputPath);
-            Directory.CreateDirectory(directory);
+            var config = new Config(args);
+            Logs.Init(config.ConfigurationRoot);
 
-            Console.WriteLine($"Saving report to {outputPath}");
+            GlobalConfiguration.Configuration.UseMemoryStorage();
 
-            var site = "https://g0t4.github.io/pluralsight-dotnet-core-xplat-apps";
-            var client = new HttpClient();
+            RecurringJob.AddOrUpdate<CheckLinkJob>("check-link", j => j.Execute(config.Site, config.Output), Cron.Minutely);
+            RecurringJob.Trigger("check-link");
 
-            var body = client.GetStringAsync(site);
-
-            Console.WriteLine(body.Result);
-
-            Console.WriteLine();
-            Console.WriteLine("Links");
-            var links = LinkChecker.GetLinks(body.Result);
-
-            links.ToList().ForEach(Console.WriteLine);
-
-            // write out links
-            
-            var checkedLikns = LinkChecker.CheckLink(links);
-            using (var file = File.CreateText(outputPath))
+            using (var server = new BackgroundJobServer())
             {
-                foreach (var link in checkedLikns.OrderBy(l => l.Exists))
-                {
-                    var status = link.IsMissing ? "missing" : "OK";
-                    file.WriteLine($"{status} - { link.Link}");
-                }
+                Console.WriteLine("Hangfire service started.  Press any key to exit ...");
+                Console.ReadKey();
             }
+
+            
         }
     }
 }

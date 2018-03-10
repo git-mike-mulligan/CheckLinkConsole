@@ -4,19 +4,32 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Net.Http;
+using Microsoft.Extensions.Logging;
 
 namespace CheckLinkConsole
 {
     public class LinkChecker
     {
-        public static IEnumerable<string> GetLinks(string page)
+        protected static readonly ILogger<LinkChecker> Logger =
+            Logs.Factory.CreateLogger<LinkChecker>();
+
+        public static IEnumerable<string> GetLinks(string link, string page)
         {
             var htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(page);
-            var links = htmlDocument.DocumentNode.SelectNodes("//a[@href]")
+
+            var originalLinks = htmlDocument.DocumentNode.SelectNodes("//a[@href]")
                 .Select(n => n.GetAttributeValue("href", string.Empty))
+                .ToList();
+
+            using (Logger.BeginScope($"Getting links from {link}"))
+            { 
+                originalLinks.ForEach(l => Logger.LogTrace(100,"Original link: {link}", l));
+            }
+            var links = originalLinks
                 .Where(l => !String.IsNullOrEmpty(l))
                 .Where(l => l.StartsWith("http"));
+
             return links;
         }
 
@@ -44,6 +57,8 @@ namespace CheckLinkConsole
                 }
                 catch (HttpRequestException exception)
                 {
+                    Logger.LogTrace(0, exception, "Failed to retrieve {link}", link);
+
                     result.Problem = exception.Message;
                     return result;
                 }
@@ -55,8 +70,10 @@ namespace CheckLinkConsole
 
 public class LinkCheckResult
 {
+    public int Id { get; set; }
     public bool Exists => String.IsNullOrWhiteSpace(Problem);
     public bool IsMissing => !Exists;
     public string Problem { get; set; }
     public string Link { get; set; }
+    public DateTime CheckedAt { get; set; } = DateTime.UtcNow;
 }

@@ -12,7 +12,7 @@ namespace CheckLinkTest
         public void WithoutHttpAtStartOfLink_NoLinks()
         {
 
-            var links = LinkChecker.GetLinks("<a href=\"google.com\" />");
+            var links = LinkChecker.GetLinks("", "<a href=\"google.com\" />");
             
             Assert.Empty(links);
             //Assert.Equal("google.com", links.First());
@@ -22,7 +22,7 @@ namespace CheckLinkTest
         public void WithHttpAtStartOfLink_LinkParses()
         {
 
-            var links = LinkChecker.GetLinks("<a href=\"http://google.com\" />");
+            var links = LinkChecker.GetLinks("", "<a href=\"http://google.com\" />");
 
             Assert.Single(links);
             Assert.Equal("http://google.com", links.First());
